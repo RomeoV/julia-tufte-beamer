@@ -1,37 +1,39 @@
-\usepackage{fontspec}
-\usepackage{sourcesanspro}
-\usepackage[T1]{fontenc}
+\ProvidesPackage{beamerthemetufte}[2023/10/04]
+\RequirePackage{fontspec}
+\RequirePackage{sourcesanspro}
+% \RequirePackage[T1]{fontenc}
 
 % TODO: albatian
 \usefonttheme{serif}
 \usefonttheme{professionalfonts}
-\usepackage{mathtools}
-\usepackage[tracking=true]{microtype}
+\RequirePackage{mathtools}
+\RequirePackage[tracking=true]{microtype}
 
-\usepackage{bold-extra}
-\usepackage{realscripts}
-\usepackage{amsmath,bm,amssymb}
-\usepackage{amsthm}
-\usepackage{bbm}
-\usepackage{tikz}
-\usepackage[group-digits=integer,group-minimum-digits=4,group-separator={,},detect-all]{siunitx}
-\usepackage{algorithmicx}
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
-\usepackage{textpos}
-\usepackage{xcolor}
-\usepackage{multirow}
-\usepackage{longtable,tabularx,booktabs}
-\usepackage[flushleft]{threeparttable}
-\usepackage{vector} % local
-\usepackage{varwidth}
+\RequirePackage{bold-extra}
+\RequirePackage{realscripts}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{bm}
+\RequirePackage{bbm}
+\RequirePackage{tikz}
+\RequirePackage[group-digits=integer,group-minimum-digits=4,group-separator={,},detect-all]{siunitx}
+\RequirePackage{algorithmicx}
+\RequirePackage{algorithm}
+\RequirePackage[noend]{algpseudocode}
+\RequirePackage{textpos}
+\RequirePackage{xcolor}
+\RequirePackage{multirow}
+\RequirePackage{longtable,tabularx,booktabs}
+\RequirePackage[flushleft]{threeparttable}
+\RequirePackage{vector} % local
+\RequirePackage{varwidth}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Unicode settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
-\usepackage{newunicodechar}
+\RequirePackage{newunicodechar}
 \newfontface{\calligraphic}{Latin Modern Math}[Scale=0.85]
 \newunicodechar{𝒪}{{\normalfont\calligraphic 𝒪}}
 \newunicodechar{ℬ}{{\normalfont\calligraphic ℬ}}
@@ -56,7 +58,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Reference (biber) settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[style=verbose,backend=biber]{biblatex}
+\RequirePackage[style=verbose,backend=biber]{biblatex}
 \addbibresource{\jobname.bib}
 \setbeamerfont{footnote}{size=\tiny}
 \setbeamertemplate{bibliography item}{}% Remove reference icon.
@@ -66,15 +68,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PGFPlot settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[pgfplots]{../juliaplots.sty/juliaplots}
-\setpythontexpygopt{style=algforopt}
+% \RequirePackage[pgfplots]{../juliaplots.sty/juliaplots}
+\RequirePackage{pgfplots}
+% \setpythontexpygopt{style=algforopt}
 \pgfplotsset{compat=newest}
 \pgfplotsset{every axis legend/.append style={legend cell align=left, font=\footnotesize, draw=none, fill=none}}
 \pgfplotsset{every axis/.append style={axis background/.style={fill=white}}}
 \pgfplotsset{every tick label/.append style={font=\footnotesize}}
 \pgfplotsset{every axis label/.append style={font=\footnotesize}}
 
-\fvset{baselinestretch=0.8}
+% \fvset{baselinestretch=0.8}
 \usepgfplotslibrary{fillbetween}
 \usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{patchplots}
@@ -106,16 +109,16 @@
 \definecolor{pastelOrange}{HTML}{C38D09}
 \definecolor{pastelRed}{HTML}{F5615C}
 
-\begin{jlcode}
-    include("../../jl/support_code.jl")
-
-    using Colors
-    using ColorSchemes
-    pasteljet = ColorMaps.RGBArrayMap(ColorSchemes.viridis, interpolation_levels=500, invert=true);
-    pastelRedBlue = ColorMaps.RGBArrayMap([RGB(246/255, 21/255, 92/255),
-                                           RGB(1.0,1.0,1.0),
-                                           RGB( 27/255,161/255,234/255)], interpolation_levels=500);
-\end{jlcode}
+% \begin{jlcode}
+%     include("../../jl/support_code.jl")
+%
+%     using Colors
+%     using ColorSchemes
+%     pasteljet = ColorMaps.RGBArrayMap(ColorSchemes.viridis, interpolation_levels=500, invert=true);
+%     pastelRedBlue = ColorMaps.RGBArrayMap([RGB(246/255, 21/255, 92/255),
+%                                            RGB(1.0,1.0,1.0),
+%                                            RGB( 27/255,161/255,234/255)], interpolation_levels=500);
+% \end{jlcode}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,7 +158,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\smallcaps}[1]{\textsc{#1}}
 
-\usepackage{mdframed}
+\RequirePackage{mdframed}
 \definecolor{shadecolor}{rgb}{1,0.8,0.3}
 \newenvironment{algorithmblock}[1][htbp]
 {\begin{mdframed}[backgroundcolor=black!5,rightline=false,leftline=false]}
@@ -227,7 +230,7 @@
 \newcommand{\mat}[1]{\vect{#1}}
 \renewcommand{\vec}[1]{\vect{#1}}
 
-\usepackage{mathtools}
+\RequirePackage{mathtools}
 \DeclarePairedDelimiter{\paren}{\lparen}{\rparen}
 \DeclarePairedDelimiter{\brock}{\lbrack}{\rbrack}
 \DeclarePairedDelimiter{\curly}{\{}{\}}
